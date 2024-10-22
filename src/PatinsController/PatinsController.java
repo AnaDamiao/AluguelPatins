@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ana.damiao
+ * @author Ana Damião
  */
 public class PatinsController {
     private ArrayList<Patins> listPatins;
@@ -13,12 +13,12 @@ public class PatinsController {
     public PatinsController(){
         listPatins = new ArrayList<Patins>();
         
-        listPatins.add(new Patins(10));
-        listPatins.add(new Patins(23));
-        listPatins.add(new Patins(32));
-        listPatins.add(new Patins(35));
-        listPatins.add(new Patins(38));
-        listPatins.add(new Patins(40));    
+        listPatins.add(new Patins(10, 20));
+        listPatins.add(new Patins(23, 20));
+        listPatins.add(new Patins(32, 20));
+        listPatins.add(new Patins(35, 20));
+        listPatins.add(new Patins(38, 20));
+        listPatins.add(new Patins(40, 20));    
     }
     
     public Patins selecionarPatinsPorTamanho(int numeroPatins){

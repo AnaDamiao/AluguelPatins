@@ -1,20 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package entidades;
 
 /**
  *
- * @author ana.damiao
+ * @author Ana Damião
  */
 public class Patins {
 
-    public Patins(int numeroPatins) {
-        this.numeroPatins = numeroPatins;
-    }
     private int numeroPatins;
+    private float valor;
 
+
+    public Patins(int numeroPatins, float valor) {
+        this.numeroPatins = numeroPatins;
+        this.valor = valor;
+    }
+    public float getValor() {
+        return valor;
+    }
+
+    public float isValor() {
+        return valor;
+    }
+    
     public int getNumeroPatins() {
         return numeroPatins;
     }
