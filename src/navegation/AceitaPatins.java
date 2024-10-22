@@ -19,8 +19,7 @@ public class AceitaPatins extends javax.swing.JFrame {
         this.numeroPatins = numeroPatins;
         initComponents();
         
-        labelValorPatins.setText("R$ " + String.format("%.2f", valor));  
-//        valorPatins.setText("Número do patins: " + numeroPatins);;
+        labelValorPatins.setText("R$ " + String.format("%.2f", valor));
     }
 
     @SuppressWarnings("unchecked")
@@ -95,7 +94,7 @@ public class AceitaPatins extends javax.swing.JFrame {
 
     private void btnSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimActionPerformed
         PatinsController patinsController = new PatinsController();
-        Patins patins = patinsController.selecionarPatinsPorTamanho(numeroPatins); // Use a variável de instância
+        Patins patins = patinsController.selecionarPatinsPorTamanho(numeroPatins);
         
         if (patins != null) {
             RegistroDeAluguel registroDeAluguel = new RegistroDeAluguel(patins);

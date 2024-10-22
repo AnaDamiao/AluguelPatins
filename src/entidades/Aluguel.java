@@ -16,7 +16,6 @@ public class Aluguel {
         this.horaInicio = horaInicio;
     }
 
-    // Getters e Setters
     public String getCpf() {
         return cpf;
     }

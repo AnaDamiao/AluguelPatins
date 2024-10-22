@@ -172,11 +172,11 @@ public class RegistroDeAluguel extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void numeroPatinsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroPatinsActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_numeroPatinsActionPerformed
 
     private void inicioAluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioAluguelActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_inicioAluguelActionPerformed
 
 
