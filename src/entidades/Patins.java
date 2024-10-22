@@ -14,6 +14,7 @@ public class Patins {
         this.numeroPatins = numeroPatins;
         this.valor = valor;
     }
+    
     public float getValor() {
         return valor;
     }

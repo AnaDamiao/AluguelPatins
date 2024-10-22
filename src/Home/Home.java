@@ -84,7 +84,7 @@ public class Home extends javax.swing.JFrame {
         if(patins != null){
             float valorAluguel = patins.getValor();
             
-            AceitaPatins aceitaPatins = new AceitaPatins(valorAluguel);
+            AceitaPatins aceitaPatins = new AceitaPatins(valorAluguel, numeroPatins);
             aceitaPatins.setVisible(true);
             this.dispose(); 
         }else{

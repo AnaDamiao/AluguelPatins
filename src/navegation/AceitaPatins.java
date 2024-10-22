@@ -1,6 +1,10 @@
 
 package navegation;
 
+import PatinsController.PatinsController;
+import entidades.Patins;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Ana Damião
@@ -8,12 +12,15 @@ package navegation;
 public class AceitaPatins extends javax.swing.JFrame {
     
     private float valor;
+    private int numeroPatins;
 
-    public AceitaPatins(float valor) {
+    public AceitaPatins(float valor, int numeroPatins) {
         this.valor = valor;
+        this.numeroPatins = numeroPatins;
         initComponents();
         
         labelValorPatins.setText("R$ " + String.format("%.2f", valor));  
+//        valorPatins.setText("Número do patins: " + numeroPatins);;
     }
 
     @SuppressWarnings("unchecked")
@@ -87,8 +94,16 @@ public class AceitaPatins extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimActionPerformed
-        RegistroDeAluguel registroDeAluguel = new RegistroDeAluguel();
-        registroDeAluguel.setVisible(true);
+        PatinsController patinsController = new PatinsController();
+        Patins patins = patinsController.selecionarPatinsPorTamanho(numeroPatins); // Use a variável de instância
+        
+        if (patins != null) {
+            RegistroDeAluguel registroDeAluguel = new RegistroDeAluguel(patins);
+            registroDeAluguel.setVisible(true);
+            this.dispose(); 
+        } else {
+            JOptionPane.showMessageDialog(this, "Patins do tamanho: " + numeroPatins + " não disponível.", "Erro", JOptionPane.ERROR_MESSAGE);    
+        }
     }//GEN-LAST:event_btnSimActionPerformed
 
     private void btnNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNaoActionPerformed
