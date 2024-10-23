@@ -161,7 +161,7 @@ public class RegistroDeAluguel extends javax.swing.JFrame {
         AluguelController.registrarAluguel(cpf, Integer.parseInt(numero), horaInicio);
         
         JOptionPane.showMessageDialog(this, 
-            "Aluguel registrado com sucesso!\nCPF: " + cpf + "\nPatins número: " + numeroPatins + "\nHora de início: " + horaInicio);
+            "Aluguel registrado com sucesso!\nCPF: " + cpf + "\nPatins número: " + numero + "\nHora de início: " + horaInicio);
         
         dispose();
         
