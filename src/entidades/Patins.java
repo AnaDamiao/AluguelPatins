@@ -8,13 +8,14 @@ public class Patins {
 
     private int numeroPatins;
     private float valor;
+    private boolean alugado;
 
 
-    public Patins(int numeroPatins, float valor) {
+    public Patins(int numeroPatins, float valor, boolean alugado) {
         this.numeroPatins = numeroPatins;
         this.valor = valor;
+        this.alugado = alugado;
     }
-    
     public float getValor() {
         return valor;
     }
@@ -30,4 +31,13 @@ public class Patins {
     public void setNumeroPatins(int numeroPatins) {
         this.numeroPatins = numeroPatins;
     }
+    
+        public boolean isAlugado() {
+        return alugado;
+    }
+
+    public void setAlugado(boolean alugado) {
+        this.alugado = alugado;
+    }
+    
 }

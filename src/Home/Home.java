@@ -81,9 +81,15 @@ public class Home extends javax.swing.JFrame {
 
         Patins patins = patinsController.selecionarPatinsPorTamanho(numeroPatins);
 
+        boolean patinsAlugado = patins.isAlugado();
         if(patins != null){
+            if(patinsAlugado == true){
+                 JOptionPane.showMessageDialog(this, "Patins do tamanho: " + numeroPatins + " Está alugado.", "Erro", JOptionPane.ERROR_MESSAGE); 
+                 return;
+            }
+
             float valorAluguel = patins.getValor();
-            
+
             AceitaPatins aceitaPatins = new AceitaPatins(valorAluguel, numeroPatins);
             aceitaPatins.setVisible(true);
             this.dispose(); 
