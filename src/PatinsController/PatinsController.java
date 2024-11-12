@@ -13,12 +13,12 @@ public class PatinsController {
     public PatinsController(){
         listPatins = new ArrayList<Patins>();
         
-        listPatins.add(new Patins(10, 20, false));
-        listPatins.add(new Patins(23, 20, false));
-        listPatins.add(new Patins(32, 20, false));
-        listPatins.add(new Patins(35, 20, false));
-        listPatins.add(new Patins(38, 20, false));
-        listPatins.add(new Patins(40, 20, false));    
+        listPatins.add(new Patins(10, 20));
+        listPatins.add(new Patins(23, 25));
+        listPatins.add(new Patins(32, 30));
+        listPatins.add(new Patins(35, 35));
+        listPatins.add(new Patins(38, 40));
+        listPatins.add(new Patins(40, 45));    
     }
     
     public Patins selecionarPatinsPorTamanho(int numeroPatins){
@@ -29,14 +29,6 @@ public class PatinsController {
         
         return null;
     }
-    
-    public void atualizarStatusAlugado(int numeroPatins, boolean alugado) {
-    for (Patins patins : listPatins) {
-        if (patins.getNumeroPatins() == numeroPatins) {
-            patins.setAlugado(alugado);
-            break;
-        }
-    }
+ 
 }
     
-}
