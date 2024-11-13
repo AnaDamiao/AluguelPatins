@@ -1,6 +1,10 @@
 package navegation;
 
 import Home.Home;
+import PatinsController.AluguelController;
+import entidades.Aluguel;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -10,7 +14,38 @@ public class Alugados extends javax.swing.JFrame {
 
     public Alugados() {
         initComponents();
+        preencherTabela();
     }
+    
+    private void preencherTabela() {
+        
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("CPF");
+        model.addColumn("Número de Patins");
+        model.addColumn("Valor Patins");
+        model.addColumn("Hora Início");
+        model.addColumn("Finalizado"); 
+
+       
+        ArrayList<Aluguel> alugueis = AluguelController.getAlugueis();
+
+        
+        for (Aluguel aluguel : alugueis) {
+            model.addRow(new Object[]{
+                aluguel.getCpf(),
+                aluguel.getNumeroPatins(),
+                aluguel.getValor(),
+                aluguel.getHoraInicio(),
+                aluguel.isFinalizado() ? "Sim" : "Não" 
+            });
+        }
+
+       
+        patinsAlugadosTbl.setModel(model);
+    }
+
+    
+    
 
 
     @SuppressWarnings("unchecked")
