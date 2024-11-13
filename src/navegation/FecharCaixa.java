@@ -1,5 +1,6 @@
 package navegation;
 
+import Home.Home;
 import PatinsController.AluguelController;
 import entidades.Aluguel;
 import java.awt.HeadlessException;
@@ -16,6 +17,7 @@ public class FecharCaixa extends javax.swing.JFrame {
     private float totalPix;
     private float totalCaixa;
     private int quantidadeAlugueis;
+    private float totalDanos;
     
     public FecharCaixa() {
         initComponents();
@@ -37,6 +39,9 @@ public class FecharCaixa extends javax.swing.JFrame {
         btnFecharCaixa1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         laTotalAlugueis = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        laTotalDanos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,6 +79,17 @@ public class FecharCaixa extends javax.swing.JFrame {
 
         laTotalAlugueis.setText("R$");
 
+        jButton1.setText("Voltar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Total de Danos:");
+
+        laTotalDanos.setText("R$");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,13 +98,10 @@ public class FecharCaixa extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnFecharCaixa1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnFecharCaixa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel3)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel10)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(laTotalRecebido))
+                            .addComponent(laTotalDanos))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel9)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -106,28 +119,46 @@ public class FecharCaixa extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(46, 46, 46)
-                                .addComponent(laTotalPix)))))
-                .addContainerGap(145, Short.MAX_VALUE))
+                                .addComponent(laTotalPix))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(btnFecharCaixa1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnFecharCaixa, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(laTotalRecebido)))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(laTotalDinheiro))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(laTotalCartao))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(laTotalPix))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(laTotalAlugueis))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(laTotalDinheiro))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(laTotalCartao))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(laTotalPix))
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(laTotalAlugueis))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel10)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(laTotalDanos)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -136,7 +167,9 @@ public class FecharCaixa extends javax.swing.JFrame {
                 .addComponent(btnFecharCaixa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnFecharCaixa1)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addGap(52, 52, 52))
         );
 
         pack();
@@ -148,6 +181,7 @@ public class FecharCaixa extends javax.swing.JFrame {
             totalDinheiro = 0;
             totalCartao = 0;
             totalPix = 0;
+            totalDanos = 0;
 
             for (Aluguel aluguel : AluguelController.getAlugueis()) {
                 if (aluguel.isFinalizado()) {
@@ -157,15 +191,17 @@ public class FecharCaixa extends javax.swing.JFrame {
                         case "Cartão" -> totalCartao += aluguel.getValor();
                         case "PIX" -> totalPix += aluguel.getValor();
                     }
+                    totalDanos += aluguel.getValorDano();
                 }
             }
             
-            totalCaixa = totalDinheiro + totalCartao + totalPix;
+            totalCaixa = totalDinheiro + totalCartao + totalPix + totalDanos;
 
             laTotalRecebido.setText(String.format("R$ %.2f", totalCaixa));
             laTotalDinheiro.setText(String.format("R$ %.2f", totalDinheiro));
             laTotalCartao.setText(String.format("R$ %.2f", totalCartao));
             laTotalPix.setText(String.format("R$ %.2f", totalPix));
+            laTotalDanos.setText(String.format("R$ %.2f", totalDanos));
             laTotalAlugueis.setText(String.format("%d", quantidadeAlugueis));
 
 
@@ -175,15 +211,20 @@ public class FecharCaixa extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFecharCaixaActionPerformed
 
     private void btnFecharCaixa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharCaixa1ActionPerformed
-        float totalEsperado = totalDinheiro + totalCartao + totalPix;
+        float totalEsperado = totalDinheiro + totalCartao + totalPix + totalDanos;
 
-        if (totalCaixa == totalEsperado) {
+        if (totalCaixa == totalEsperado && totalCaixa > 0) {
             JOptionPane.showMessageDialog(this, "Fechamento do caixa realizado com sucesso!", "Fechar Caixa", JOptionPane.INFORMATION_MESSAGE);
             dispose();
         } else {
-            JOptionPane.showMessageDialog(this, "O total do caixa não coincide com a soma das formas de pagamento. Verifique os valores.", "Erro", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "O total do caixa não coincide com a soma das formas de pagamento, ou está zerado. Verifique os valores. Ou confirme se finalizou todos os alugueis", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnFecharCaixa1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new Home().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
 
@@ -197,13 +238,16 @@ public class FecharCaixa extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFecharCaixa;
     private javax.swing.JButton btnFecharCaixa1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel laTotalAlugueis;
     private javax.swing.JLabel laTotalCartao;
+    private javax.swing.JLabel laTotalDanos;
     private javax.swing.JLabel laTotalDinheiro;
     private javax.swing.JLabel laTotalPix;
     private javax.swing.JLabel laTotalRecebido;

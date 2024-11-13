@@ -8,25 +8,26 @@ import java.util.ArrayList;
  * @author Ana Damião
  */
 public class PatinsController {
-    private ArrayList<Patins> listPatins;
+    private static ArrayList<Patins> patinsList = new ArrayList<>();
     
-    public PatinsController(){
-        listPatins = new ArrayList<Patins>();
-        
-        listPatins.add(new Patins(10, 20));
-        listPatins.add(new Patins(23, 25));
-        listPatins.add(new Patins(32, 30));
-        listPatins.add(new Patins(35, 35));
-        listPatins.add(new Patins(38, 40));
-        listPatins.add(new Patins(40, 45));    
+    
+    public PatinsController(){        
+        if (patinsList.isEmpty()) {
+            patinsList.add(new Patins(10, 20));
+            patinsList.add(new Patins(23, 25));
+            patinsList.add(new Patins(32, 30));
+            patinsList.add(new Patins(35, 35));
+            patinsList.add(new Patins(38, 40));
+            patinsList.add(new Patins(40, 45));    
+        }    
     }
     
-    public Patins selecionarPatinsPorTamanho(int numeroPatins){
-        for(Patins patins : listPatins){
-            if(patins.getNumeroPatins() == numeroPatins)
+    public static Patins selecionarPatinsPorTamanho(int numeroPatins) {
+        for(Patins patins : patinsList){
+            if (patins.getNumeroPatins() == numeroPatins) {
                 return patins;
-        }         
-        
+            }         
+        }
         return null;
     }
  

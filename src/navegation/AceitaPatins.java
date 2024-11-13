@@ -1,6 +1,7 @@
 
 package navegation;
 
+import Home.Home;
 import PatinsController.PatinsController;
 import entidades.Patins;
 import javax.swing.JOptionPane;
@@ -93,19 +94,14 @@ public class AceitaPatins extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimActionPerformed
-        PatinsController patinsController = new PatinsController();
-        Patins patins = patinsController.selecionarPatinsPorTamanho(numeroPatins);
-        
-        if (patins != null) {
+        Patins patins = PatinsController.selecionarPatinsPorTamanho(numeroPatins);
             RegistroDeAluguel registroDeAluguel = new RegistroDeAluguel(patins);
             registroDeAluguel.setVisible(true);
             this.dispose(); 
-        } else {
-            JOptionPane.showMessageDialog(this, "Patins do tamanho: " + numeroPatins + " não disponível.", "Erro", JOptionPane.ERROR_MESSAGE);    
-        }
     }//GEN-LAST:event_btnSimActionPerformed
 
     private void btnNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNaoActionPerformed
+        new Home().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnNaoActionPerformed
 

@@ -9,8 +9,7 @@ import Home.Home;
 public class AluguelDePatins {
 
     public static void main(String[] args) {
-       Home homeAluguel = new Home();
-       homeAluguel.setVisible(true);
+       new Home().setVisible(true);
     }
     
 }

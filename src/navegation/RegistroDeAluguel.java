@@ -155,24 +155,23 @@ public class RegistroDeAluguel extends javax.swing.JFrame {
         String numero = numeroPatins.getText();
         String horaInicio = inicioAluguel.getText();
         int patinsNumero = Integer.parseInt(numero);        
-        
-        Home home = new Home();
-        
-        if(cpf.isEmpty()){
+
+        if(cpf.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, insira o CPF.", "Erro", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        AluguelController.registrarAluguel(cpf, patinsNumero, patins.getValor(), horaInicio);
-        
-        JOptionPane.showMessageDialog(this, 
-            "Aluguel registrado com sucesso!\nCPF: " + cpf + "\nPatins número: " + numero + "\nHora de início: " + horaInicio);
-    
-        home.setVisible(true);
-        dispose();    
+        boolean sucesso = AluguelController.registrarAluguel(cpf, patinsNumero, patins.getValor(), horaInicio);
+        if (sucesso) {
+            JOptionPane.showMessageDialog(this, 
+                "Aluguel registrado com sucesso!\nCPF: " + cpf + "\nPatins número: " + numero + "\nHora de início: " + horaInicio);
+            new Home().setVisible(true);
+            dispose();    
+        }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        new Home().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 

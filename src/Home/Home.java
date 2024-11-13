@@ -163,20 +163,17 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_numeroPatinsActionPerformed
 
     private void btnAlugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlugarActionPerformed
- 
         try {
             int patinsNumero = Integer.parseInt(this.numeroPatins.getText());
-
             Patins patins = patinsController.selecionarPatinsPorTamanho(patinsNumero);
 
-            if (patins != null) {
+            if (patins != null && patins.isDisponivel()) {
                 float valorAluguel = patins.getValor();
-
                 AceitaPatins aceitaPatins = new AceitaPatins(valorAluguel, patinsNumero);
                 aceitaPatins.setVisible(true);
                 this.dispose();
             } else {
-                JOptionPane.showMessageDialog(this, "Patins do tamanho: " + patinsNumero + " não disponível.", "Erro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Patins do tamanho: " + patinsNumero + " não está disponível.", "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Por favor, insira um número de calçado válido.", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -194,10 +191,18 @@ public class Home extends javax.swing.JFrame {
             int patinsNumero = Integer.parseInt(this.numeroPatins.getText());
 
             String valorDanoStr = JOptionPane.showInputDialog(this, "Informe o valor do dano (se houver):", "0");
+            if (valorDanoStr == null) {
+                JOptionPane.showMessageDialog(this, "Operação cancelada.");
+                return;
+            }
             float valorDano = Float.parseFloat(valorDanoStr);
 
             String[] opcoesPagamento = {"Cartão", "Dinheiro", "Pix"};
             String formaPagamento = (String) JOptionPane.showInputDialog(this, "Selecione a forma de pagamento:", "Forma de pagamento", JOptionPane.QUESTION_MESSAGE, null, opcoesPagamento, opcoesPagamento[0]);
+            if (formaPagamento == null) {
+                JOptionPane.showMessageDialog(this, "Operação cancelada.");
+                return;
+            }
 
             AluguelController.finalizarAluguel(patinsNumero, valorDano, formaPagamento);
 
