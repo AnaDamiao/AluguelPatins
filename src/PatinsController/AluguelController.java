@@ -29,9 +29,9 @@ public class AluguelController {
             return false;
         }
     }
-    
+
     public static void finalizarAluguel(int numeroPatins, float valorDano, String formaPagamento) {
-         for (Aluguel aluguel : alugueis) {
+        for (Aluguel aluguel : alugueis) {
             if (aluguel.getNumeroPatins() == numeroPatins && !aluguel.isFinalizado()) {
                 aluguel.setValorDano(valorDano);
                 aluguel.setFormaPagamento(formaPagamento);

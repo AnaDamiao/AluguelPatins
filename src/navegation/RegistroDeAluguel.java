@@ -2,7 +2,6 @@ package navegation;
 
 import Home.Home;
 import PatinsController.AluguelController;
-import PatinsController.PatinsController;
 import entidades.Patins;
 import java.time.LocalTime;
 import javax.swing.JOptionPane;

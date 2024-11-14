@@ -61,10 +61,10 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnVoltar" min="-2" max="-2" attributes="0"/>
                               <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="btnFecharCaixa1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnFecharCaixa" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnFecharCaixa" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnConsultarFechamento" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -116,11 +116,11 @@
                   <Component id="laTotalRecebido" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnFecharCaixa" min="-2" max="-2" attributes="0"/>
+              <Component id="btnConsultarFechamento" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="btnFecharCaixa1" min="-2" max="-2" attributes="0"/>
+              <Component id="btnFecharCaixa" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="btnVoltar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -147,12 +147,12 @@
         <Property name="text" type="java.lang.String" value="R$:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnFecharCaixa">
+    <Component class="javax.swing.JButton" name="btnConsultarFechamento">
       <Properties>
         <Property name="text" type="java.lang.String" value="Consultar Fechamento do caixa"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFecharCaixaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConsultarFechamentoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
@@ -175,12 +175,12 @@
         <Property name="text" type="java.lang.String" value="R$"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnFecharCaixa1">
+    <Component class="javax.swing.JButton" name="btnFecharCaixa">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fechar Caixa"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFecharCaixa1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFecharCaixaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
@@ -193,12 +193,12 @@
         <Property name="text" type="java.lang.String" value="R$"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnVoltar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel10">

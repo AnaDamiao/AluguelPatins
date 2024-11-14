@@ -31,15 +31,15 @@ public class FecharCaixa extends javax.swing.JFrame {
         laTotalDinheiro = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         laTotalRecebido = new javax.swing.JLabel();
-        btnFecharCaixa = new javax.swing.JButton();
+        btnConsultarFechamento = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         laTotalCartao = new javax.swing.JLabel();
         laTotalPix = new javax.swing.JLabel();
-        btnFecharCaixa1 = new javax.swing.JButton();
+        btnFecharCaixa = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         laTotalAlugueis = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         laTotalDanos = new javax.swing.JLabel();
 
@@ -53,10 +53,10 @@ public class FecharCaixa extends javax.swing.JFrame {
 
         laTotalRecebido.setText("R$:");
 
-        btnFecharCaixa.setText("Consultar Fechamento do caixa");
-        btnFecharCaixa.addActionListener(new java.awt.event.ActionListener() {
+        btnConsultarFechamento.setText("Consultar Fechamento do caixa");
+        btnConsultarFechamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFecharCaixaActionPerformed(evt);
+                btnConsultarFechamentoActionPerformed(evt);
             }
         });
 
@@ -68,10 +68,10 @@ public class FecharCaixa extends javax.swing.JFrame {
 
         laTotalPix.setText("R$");
 
-        btnFecharCaixa1.setText("Fechar Caixa");
-        btnFecharCaixa1.addActionListener(new java.awt.event.ActionListener() {
+        btnFecharCaixa.setText("Fechar Caixa");
+        btnFecharCaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFecharCaixa1ActionPerformed(evt);
+                btnFecharCaixaActionPerformed(evt);
             }
         });
 
@@ -79,10 +79,10 @@ public class FecharCaixa extends javax.swing.JFrame {
 
         laTotalAlugueis.setText("R$");
 
-        jButton1.setText("Voltar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnVoltarActionPerformed(evt);
             }
         });
 
@@ -124,10 +124,10 @@ public class FecharCaixa extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButton1)
+                                .addComponent(btnVoltar)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(btnFecharCaixa1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnFecharCaixa, javax.swing.GroupLayout.Alignment.LEADING))))
+                                    .addComponent(btnFecharCaixa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnConsultarFechamento, javax.swing.GroupLayout.Alignment.LEADING))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(laTotalRecebido)))
                 .addContainerGap(142, Short.MAX_VALUE))
@@ -164,18 +164,18 @@ public class FecharCaixa extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(laTotalRecebido))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnFecharCaixa)
+                .addComponent(btnConsultarFechamento)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnFecharCaixa1)
+                .addComponent(btnFecharCaixa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnVoltar)
                 .addGap(52, 52, 52))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnFecharCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharCaixaActionPerformed
+    private void btnConsultarFechamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarFechamentoActionPerformed
         
         try {
             totalDinheiro = 0;
@@ -208,9 +208,9 @@ public class FecharCaixa extends javax.swing.JFrame {
         } catch (HeadlessException e) {
             JOptionPane.showMessageDialog(this, "Erro ao fechar caixa: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btnFecharCaixaActionPerformed
+    }//GEN-LAST:event_btnConsultarFechamentoActionPerformed
 
-    private void btnFecharCaixa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharCaixa1ActionPerformed
+    private void btnFecharCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharCaixaActionPerformed
         float totalEsperado = totalDinheiro + totalCartao + totalPix + totalDanos;
 
         if (totalCaixa == totalEsperado && totalCaixa > 0) {
@@ -219,12 +219,12 @@ public class FecharCaixa extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "O total do caixa não coincide com a soma das formas de pagamento, ou está zerado. Verifique os valores. Ou confirme se finalizou todos os alugueis", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btnFecharCaixa1ActionPerformed
+    }//GEN-LAST:event_btnFecharCaixaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         new Home().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     public static void main(String args[]) {
 
@@ -236,9 +236,9 @@ public class FecharCaixa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConsultarFechamento;
     private javax.swing.JButton btnFecharCaixa;
-    private javax.swing.JButton btnFecharCaixa1;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;

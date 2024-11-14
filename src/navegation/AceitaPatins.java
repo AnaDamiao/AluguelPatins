@@ -4,7 +4,6 @@ package navegation;
 import Home.Home;
 import PatinsController.PatinsController;
 import entidades.Patins;
-import javax.swing.JOptionPane;
 
 /**
  *
